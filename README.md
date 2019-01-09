@@ -239,8 +239,8 @@ Let's go to http://umn-gis-5574.github.io/week2/2.html and play around.
 This Khan Academy course is excellent. If you have any doubts about your profiency with this stuff, please complete this course for next week.  
 https://www.khanacademy.org/computing/computer-programming/html-css
 
-Same goes for this JavaScript tutorial from the MDN.  
-https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/JavaScript_basics
+Same goes for the tutorials from the Mozilla Developer Network.  
+https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web
 
 And a JQuery tutorial. It can do a lot of stuff.  
 https://learn.jquery.com/about-jquery/how-jquery-works/

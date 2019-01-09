@@ -1,7 +1,8 @@
 ### Overview of the workshop
 1. A whirlwind overview of JavaScript, HTML, and CSS.  
-2. Putting all three to work by making a web map.
-3. JQuery and what it is in relation to JavaScript.
+2. Putting all three to work by making a webpage containing text, an image, and an interactive web map.
+3. JQuery and what it is in relation to JavaScript
+4. Where to go next?
 
 ### Anatomy of a web page
 1. In the beginning, there was the DOCTYPE.
@@ -9,31 +10,60 @@
   <!DOCTYPE html>
   ```
   
-Any self-respecting `.html` file will begin with a declaration to the world what sort of document it is. While there exists a [wide variety](https://en.wikipedia.org/wiki/Document_type_declaration) of doctypes, the **only one** you need to concern yourself with is just plain old `html`. With the advent of HTML5 (the 5th version of the specification for the markup language HTML), it's not really worth too much of your time thinking about the DOCTYPE. As wikipedia neatly puts it: 'The DOCTYPE is retained in HTML5 as a "mostly useless, but required" header'
+Any self-respecting `.html` file must begin with a declaration to the world what sort of document it is. While there exists a [wide variety](https://en.wikipedia.org/wiki/Document_type_declaration) of doctypes, the **only one** you need to concern yourself with is just plain old `html`. With the advent of HTML5 (the 5th version of the specification for the markup language HTML), it's not really worth too much of your time thinking about the DOCTYPE. It's one of those things that's useless, but still required.
 
-2. Following the DOCTYPE, you encounter the `<head>` of your document. Basically, the head element contains metadata about your web page, such as:
-  + `<title>`, which is what you see in the browser tab and search results.
-  + Various `<meta>` elements with different attributes such as name and content. These include `viewport`, which is *crucial* for mobile web development, `charset`, which is *crucial* if you are working with diacritics (e.g. á or ö). Those two should be included in just about any web page you make.
+2. Following the DOCTYPE, you will see the first *element* of your webpage, called `html` which contains everything other than the DOCTYPE declaration. Elements *that will contain other elements* consist of opening and closing *tags*. The opening tag consists of the element's name wrapped in `<` and `>`, while the closing tag wraps the element name in `</` and `>`.  So, at this point your `.html` file would look like this:
+
+```html
+<!DOCTYPE html>
+<html>
+	
+</html>
+```
+
+3. Next, you will encounter the first *nested* element of your document, called the `head`. The `head` contains metadata about your web page. Some of these elements, such as `meta`, do not contain text or other elements, and as such do not use closing tags. The `head` can contain the following (not an exhaustive list):
+  + `<title>`, which is what you see in the browser tab and search results. This is a very important element of a professional looking site and easily overlooked. 
+  ```html
+    <title>My website</title>
+  ```
+  + Various `<meta>` elements with different `attributes` such as `name` and `content`. These include `viewport`, which is *crucial* for mobile web development, and `charset`, which is *crucial* if you are working with diacritics (e.g. á or ö). Those two should be included in just about any web page you make.
   ```html
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   ```
-  + `<link>` elements to point to `stylesheets` that tell the browser loading your page how to style the content contained in the HTML. Should the text be red or black? 12px or 100px? The `href` attribute is where you put the URL to the stylesheet in question. Example:
+  + `<link>` elements to point to `stylesheets`, which are `.css` files, telling the browser loading your page how to style the content contained in the HTML. Should the text be red or black? 12px or 100px? The `href` attribute is where you put the URL to the stylesheet in question. Below is an example that references the stylesheet used by Leaflet, the popular open source mapping tool we will use later:
   ```html
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css">
   ```
-  + `<style>` element is a way to use CSS within your HTML, rather than storing it in a CSS file. It's really just a matter of convenience. It can be a good idea to keep your CSS, HTML, and JS in separate files (if only because it opens up lots of text editor features), but for the purposes of this workshop we'll keep everything in a single `html` file.
+  + `<style>` element is a way to use CSS within your HTML, rather than storing it in a separate CSS file. It's really just a matter of convenience. It can be a good idea to keep your CSS, HTML, and JS in separate files (if only because it opens up lots of text editor features), but for the purposes of this workshop we'll keep everything in a single `html` file.
   + `<script>` elements allow you to incorporate JavaScript into your web page. Either directly:
   ```html
   <script>alert("Where in the world is Carmen San Diego?");</script>
   ```
-   or by supplying a URL via a `src` attribute (kinda like `<link>`s using the `href` attribute) 
+   or by supplying a URL via a `src` attribute (similar to `<link>`s use of the `href` attribute). Again, the example below is for Leaflet.
 
    ```html
    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
    ```
 
-3. The main attraction of any HTML page is the `<body>`. This is where the actual content of your page goes. Everything within your `<body>` is called an *element*. There are [waaaay too many](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) elements to cover in this workshop, but just know that when making web pages, you'll create a container of some sort (usually a `<div>` element).
+Note that the `script` tag *always requires* both an opening and closing tag!
+
+Taken all together, the `DOCTYPE`, `<html>`, and `<head>` will look something like this. Note the indentation of `<head>`, which is a common convention but not required. Indenting elements contained within other elements makes your HTML much more readable:
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My website</title>
+		<meta charset="utf-8" />
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css">
+		<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+	</head>
+</html>
+```
+
+4. The main attraction of any HTML page is the `<body>`. This is where the actual content of your page goes. Everything within your `<body>` is called an *element*. There are [waaaay too many](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) elements to cover in this workshop, but just know that when making web pages, you'll create a container of some sort (usually a `<div>` element).
 
 ### CSS classes, ids, selectors
 Cascading Style Sheets (CSS) allow you to apply a set of *rules* to your content, which will be used to determine its appearance. Most newcomers to CSS get caught up by styles not being applied when you think they should be. To avoid this problem, it's very helpful to get proficient with *selector specificity*, which is the mechanism by which your browser decides which CSS rule to actually use when styling a page. This article from [CSS Tricks](https://css-tricks.com/specifics-on-css-specificity/) can be helpful. Here's an example of what I mean by specificity. Say you have a header element like this:

@@ -4,6 +4,12 @@
 3. JQuery and what it is in relation to JavaScript
 4. Where to go next?
 
+### What is HTML?
+
+HTML stands for HyperText Markup Language. At its heart, HTML is used to give *structure* to text and other content. If you think of a website as a house, then you can picture the HTML as the framing.
+
+<img src="https://farm7.staticflickr.com/6221/6334296225_880c0d9acf.jpg" width="500" height="333" alt="Mueller House Condominiums Framing">
+
 ### Anatomy of a web page
 1. In the beginning, there was the DOCTYPE.
   ```html

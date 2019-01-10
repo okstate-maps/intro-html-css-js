@@ -71,8 +71,37 @@ Taken all together, the `DOCTYPE`, `<html>`, and `<head>` will look something li
 
 4. The main attraction of any HTML page is the `<body>`. This is where the actual content of your page goes. Everything within your `<body>` is called an *element*. There are [waaaay too many](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) elements to cover in this workshop, but just know that when making web pages, you'll create a container of some sort (usually a `<div>` element).
 
-### CSS classes, ids, selectors
-Cascading Style Sheets (CSS) allow you to apply a set of *rules* to your content, which will be used to determine its appearance. Most newcomers to CSS get caught up by styles not being applied when you think they should be. To avoid this problem, it's very helpful to get proficient with *selector specificity*, which is the mechanism by which your browser decides which CSS rule to actually use when styling a page. This article from [CSS Tricks](https://css-tricks.com/specifics-on-css-specificity/) can be helpful. Here's an example of what I mean by specificity. Say you have a header element like this:
+### CSS
+Cascading Style Sheets (CSS) allow you to apply a set of *rules* to your content, which will be used to determine its appearance. 
+
+CSS is applied according to *rules* you specify. An example of a CSS rule is `color: red`, which means that text should be displayed with the color red. The elements these rules get applied to is decided using *selectors*. 
+
+#### Selectors
+Selectors consist of element types, classes, ids, or a combination of these. For example, to select all `h1` elements, you'd use a selector like this.
+
+```css
+h1 {
+
+}
+```
+
+The {} after `h1` are where your rules will go. Thus, if we wanted all `h1` elements to have red text, the selector and rule would look like this.
+
+```css
+h1 {
+	color: red
+}
+```
+
+While using just element names to set style rules is useful, you quickly encounter the case where you need to get more specific.
+
+#### Classes
+
+
+#### IDs
+
+#### Specificity
+Most newcomers to CSS get caught up by styles not being applied when you think they should be. To avoid this problem, it's very helpful to get proficient with *selector specificity*, which is the mechanism by which your browser decides which CSS rule to actually use when styling a page. This article from [CSS Tricks](https://css-tricks.com/specifics-on-css-specificity/) can be helpful. Here's an example of what I mean by specificity. Say you have a header element like this:
 
 ```html
 <h1 id="greeting" class="cowboy-greeting">Howdy</h1>
@@ -99,6 +128,7 @@ What color do you think the word "Howdy" will look like?
 Take a look [here](http://jsbin.com/yiyukequka/edit?html,css,output).
 
 Having a sense of how selectors work and how specificity comes into play will save you *many* headaches down the line.
+
 
 ### JavaScript and JQuery
 

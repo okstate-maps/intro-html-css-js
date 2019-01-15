@@ -69,7 +69,19 @@ Taken all together, the `DOCTYPE`, `<html>`, and `<head>` will look something li
 </html>
 ```
 
-4. The main attraction of any HTML page is the `<body>`. This is where the actual content of your page goes. Everything within your `<body>` is called an *element*. There are [waaaay too many](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) elements to cover in this workshop, but just know that when making web pages, you'll create a container of some sort (usually a `<div>` element).
+4. The main attraction of any HTML page is the `<body>`. This is where the actual content of your page goes. Everything within your `<body>` is called an *element*. There are [waaaay too many](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) elements to cover in this workshop, but there are just a few groups you need to get started.
+
+#### Text elements
+
+##### Headings (`<h1> - <h6>`)
+Headings allow you to label different parts of your webpage in order of importance. For example, `<h1>` should be reserved for the title of the page, or whatever is the most important text.
+
+https://codepen.io/krdyke/pen/WLmxLB
+
+##### Paragraphs `<p>`
+The paragraph element is perhaps the most common text element you'll come across. It is used for blocks of text. Note that one feature of `<p>` is that after closing one (using `</p>`), there will be a line break.
+
+https://codepen.io/krdyke/pen/GPeqXG
 
 ### CSS
 Cascading Style Sheets (CSS) allow you to apply a set of *rules* to your content, which will be used to determine its appearance. 
@@ -92,6 +104,10 @@ h1 {
 	color: red
 }
 ```
+
+See how it works at the CodePen below.
+
+https://codepen.io/krdyke/pen/QzogVR
 
 While using just element names to set style rules is useful, you quickly encounter the case where you need to get more specific.
 

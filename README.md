@@ -88,6 +88,10 @@ Cascading Style Sheets (CSS) allow you to apply a set of *rules* to your content
 
 CSS is applied according to *rules* you specify. An example of a CSS rule is `color: red`, which means that text should be displayed with the color red. The elements these rules get applied to is decided using *selectors*. 
 
+The following link is a reference to *every available CSS rule*. Chances are you'll never use many of these, but whenever you need to check or recheck something, this is a great starting point.
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+
 #### Selectors
 Selectors consist of element types, classes, ids, or a combination of these. For example, to select all `h1` elements, you'd use a selector like this.
 
@@ -97,11 +101,24 @@ h1 {
 }
 ```
 
-The {} after `h1` are where your rules will go. Thus, if we wanted all `h1` elements to have red text, the selector and rule would look like this.
+The {} after `h1` indicates a *block* where your *declarations* will go. A CSS declaration has the following structure:
+
+![declaration](https://mdn.mozillademos.org/files/3665/css%20syntax%20-%20declaration.png)
+Source: [MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Syntax#CSS_declarations)
+
+Thus, if we wanted all `h1` elements to have red text, the selector, block, and declaration would look like this.
 
 ```css
 h1 {
-	color: red
+	color: red;
+}
+```
+
+Selectors can be grouped using commas to apply the same declarations to different elements. For example to apply the `color: red` declaration to multiple types of headings, you'd use:
+
+```css
+h1, h2, h3 {
+	color: red;
 }
 ```
 
@@ -113,8 +130,11 @@ While using just element names to set style rules is useful, you quickly encount
 
 #### Classes
 
+Classes are a marvelous way to group CSS declarations.
 
 #### IDs
+
+#### Nested Selectors
 
 #### Specificity
 Most newcomers to CSS get caught up by styles not being applied when you think they should be. To avoid this problem, it's very helpful to get proficient with *selector specificity*, which is the mechanism by which your browser decides which CSS rule to actually use when styling a page. This article from [CSS Tricks](https://css-tricks.com/specifics-on-css-specificity/) can be helpful. Here's an example of what I mean by specificity. Say you have a header element like this:

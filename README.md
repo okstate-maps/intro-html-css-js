@@ -129,6 +129,8 @@ Use the image element to add an image. the `src` attribute points to where the i
 <img src="https://media.giphy.com/media/26hiu1Oj15ePpkJnG/giphy.gif">
 ```
 
+https://codepen.io/krdyke/pen/daPyve
+
 You can adjust the size of an image using CSS. The easiest way is to assign an ID to the img element and then style that ID.
 
 ```html

@@ -149,11 +149,85 @@ If you set the height, by default the width will change accordingly to maintain 
 
 *Note:* If you're making an image drastically smaller than its actual size, you should consider creating a smaller version of the image, to improve load times and save user's data.
 
-##### Video
+##### Video `<video>`
 
-##### Iframes
+The video element can be used to play videos. Generally, this does not apply to Youtube/Vimeo videos. These services generally use Iframes (see the next section).
+
+```html
+<video controls src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+    poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+    width="620">
+
+Sorry, your browser doesn't support embedded videos, 
+but don't worry, you can <a href="https://archive.org/details/BigBuckBunny_124">download it</a> 
+and watch it with your favorite video player!
+
+</video>
+```
+
+https://codepen.io/krdyke/pen/pGvJZm
+
+##### Iframes `<iframe>`
+
+Iframes are used to embed content from other websites. This can be an entire site, but much more commonly these are used for customized embeds from sites such as YouTube.
+
+A basic example for a random website
+```html
+<iframe width="860" height="515" src="http://info.library.okstate.edu/map-room"
+```
+
+A YouTube provided example
+```html
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Z9N4xFh43os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
+
+https://codepen.io/krdyke/pen/KJwpLO
 
 #### Structural
+These are slightly more abstract elements. They are used to structure the logical flow of your website, which is very important for the purposes of accessibility (for example, users using screen-readers).
+
+##### Division `<div>`
+A div is used to divide content on your site. As an abstract element, by itself you won't see anything. It's useful for grouping multiple elements into logical groups, particularly when it comes to applying styling via CSS. When possible, you ought to try and use more specific designators, such as `<article>`, `<main>`, `<header>`, `<footer>`, and `<nav>`. We won't cover each of those in detail, but check out [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) for information about each.
+
+https://codepen.io/krdyke/pen/EraVbv
+
+#### Input `<input>`
+
+##### Button `<button>` or `<input type="button">`
+
+In general, you should use the `<button>` element, as it's much easier to customize the style of.
+
+```html
+<button id="red-alert" type="button" onclick="alert('you clicked the button!');">Press me</button>
+```
+
+https://codepen.io/krdyke/pen/aXzdbK
+
+##### Radio `<input type="radio">`
+
+Use this for when you want users to pick one (and only one) option among several. You create a `radio group` by making multiple `input` elements and setting the `name` attribute to the same value.
+
+```html
+ <input type="radio" id="color1"
+   name="favorite-color" value="red">
+ <label for="color1">Red</label>
+
+ <input type="radio" id="color2"
+   name="favorite-color" value="blue">
+ <label for="color2">Blue</label>
+
+ <input type="radio" id="color3"
+   name="favorite-color" value="pink">
+ <label for="color3">Pink</label>
+```
+
+https://codepen.io/krdyke/pen/JxoGOz
+
+##### Checkbox `<input type="checkbox">`
+##### Text `<input type="text">`
+
+
+
 
 ### CSS
 Cascading Style Sheets (CSS) allow you to apply a set of *rules* to your content, which will be used to determine its appearance. 

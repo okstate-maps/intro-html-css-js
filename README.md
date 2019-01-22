@@ -54,7 +54,7 @@ Any self-respecting `.html` file must begin with a declaration to the world what
 
 Note that the `script` tag *always requires* both an opening and closing tag!
 
-Taken all together, the `DOCTYPE`, `<html>`, and `<head>` will look something like this. Note the indentation of `<head>`, which is a common convention but not required. Indenting elements contained within other elements makes your HTML much more readable:
+Taken all together, the `DOCTYPE`, `<html>`, and `<head>` will look something like this. Note the indentation of `<head>` and subsequent elements within it, which is a common convention but not required. Indenting elements contained within other elements makes your HTML much more readable:
 
 ```html
 <!DOCTYPE html>
@@ -76,12 +76,58 @@ Taken all together, the `DOCTYPE`, `<html>`, and `<head>` will look something li
 ##### Headings (`<h1> - <h6>`)
 Headings allow you to label different parts of your webpage in order of importance. For example, `<h1>` should be reserved for the title of the page, or whatever is the most important text.
 
+```html
+<h1> The main headline of my website </h1>
+```
+
 https://codepen.io/krdyke/pen/WLmxLB
 
 ##### Paragraphs `<p>`
 The paragraph element is perhaps the most common text element you'll come across. It is used for blocks of text. Note that one feature of `<p>` is that after closing one (using `</p>`), there will be a line break.
 
+```html
+<p>
+no, money down! silicon chips and such posturologists scratchtasia well, you all know what laughter sounds like. lupper highway 9 bird sanctuary science pole scientician totally outrageous paradigm dealie smokesperson neglecterino beginualize four krustys crayola oblongata smuggled vegetables lisa, go to your room lord protect this rocket house the congealed group paraplegiarino bort boostafazoo knifey wifey baby guts nulecule dorkus molorkus pricetaggery bartesque here's vanessa williams genius at work dirty, maybe. dangerous, hardly.
+</p>
+```
+
 https://codepen.io/krdyke/pen/GPeqXG
+
+##### Anchors (links)
+The anchor element is used to link to other websites or sections of your webpage. They need to wrap around existing elements (or part of them). 
+
+```html
+<p> This is a paragraph containing an <a href="http://info.library.okstate.edu/map-room">anchor</a>.</p>
+```
+
+It does not have to be a paragraph element. Also, if you include `target="_blank"`, clicking the link opens it in a new tab. Very useful!
+
+```html
+<h3> Here's a <a href="http://library.okstate.edu" target="_blank">link</a> within a heading that opens in a new tab </h3>
+```
+
+If you assign an element an `id`, you can use an anchor to scroll the user back to it when clicked. This is how "Back to top" links are created.
+
+```html
+<h1 id="top">Top of document</h1>
+
+... bunch of content ...
+
+<p><a href="#top">Back to top</a></p>
+
+```
+
+https://codepen.io/krdyke/pen/MLYgZW
+
+#### Media
+
+##### Images
+
+##### Video
+
+##### Iframes
+
+#### Structural
 
 ### CSS
 Cascading Style Sheets (CSS) allow you to apply a set of *rules* to your content, which will be used to determine its appearance. 

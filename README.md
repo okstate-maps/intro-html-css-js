@@ -93,7 +93,7 @@ no, money down! silicon chips and such posturologists scratchtasia well, you all
 
 https://codepen.io/krdyke/pen/GPeqXG
 
-##### Anchors (links)
+##### Anchors `<a>` (links)
 The anchor element is used to link to other websites or sections of your webpage. They need to wrap around existing elements (or part of them). 
 
 ```html
@@ -121,7 +121,31 @@ https://codepen.io/krdyke/pen/MLYgZW
 
 #### Media
 
-##### Images
+##### Images `<img>`
+
+Use the image element to add an image. the `src` attribute points to where the image exists. It's important to note that if the image is not on the same server as your website, it may not link. Especially if you're linking to a website that's not specifically made for sharing images (like the Giphy example below).
+
+```html
+<img src="https://media.giphy.com/media/26hiu1Oj15ePpkJnG/giphy.gif">
+```
+
+You can adjust the size of an image using CSS. The easiest way is to assign an ID to the img element and then style that ID.
+
+```html
+<img id="some-name" src="https://media.giphy.com/media/26hiu1Oj15ePpkJnG/giphy.gif">
+```
+
+```css
+#some-name {
+  height:75px;
+  }
+```
+
+https://codepen.io/krdyke/pen/daPyZK
+
+If you set the height, by default the width will change accordingly to maintain the original aspect ratio. 
+
+*Note:* If you're making an image drastically smaller than its actual size, you should consider creating a smaller version of the image, to improve load times and save user's data.
 
 ##### Video
 

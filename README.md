@@ -119,6 +119,17 @@ If you assign an element an `id`, you can use an anchor to scroll the user back 
 
 https://codepen.io/krdyke/pen/MLYgZW
 
+##### Line Break `<br>`
+A crucial element for reproducing something like a poem or address, `<br>` is the equivalent of hitting the enter key. However, do not use `<br>` to separate paragraphs. That's what the `<p>` is for!
+
+```html
+Kevin Dyke <br>
+123 Fake Street <br>
+Stillwater, OK 74078
+```
+
+https://codepen.io/krdyke/pen/RvPwXv
+
 #### Media
 
 ##### Images `<img>`
@@ -189,6 +200,9 @@ These are slightly more abstract elements. They are used to structure the logica
 ##### Division `<div>`
 A div is used to divide content on your site. As an abstract element, by itself you won't see anything. It's useful for grouping multiple elements into logical groups, particularly when it comes to applying styling via CSS. When possible, you ought to try and use more specific designators, such as `<article>`, `<main>`, `<header>`, `<footer>`, and `<nav>`. We won't cover each of those in detail, but check out [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) for information about each.
 
+##### Span `<span>`
+Similar to a div, except that it functions as an *inline* element. For example, if you wanted to alter the text within a `<p>` element, you would use a `<span>`.
+
 https://codepen.io/krdyke/pen/EraVbv
 
 #### Input `<input>`
@@ -204,8 +218,7 @@ In general, you should use the `<button>` element, as it's much easier to custom
 https://codepen.io/krdyke/pen/aXzdbK
 
 ##### Radio `<input type="radio">`
-
-Use this for when you want users to pick one (and only one) option among several. You create a `radio group` by making multiple `input` elements and setting the `name` attribute to the same value.
+Use radio buttons when you want users to pick one (and only one) option among several. You create a `radio group` by making multiple `input` elements and setting the `name` attribute to the same value.
 
 ```html
  <input type="radio" id="color1"
@@ -224,10 +237,47 @@ Use this for when you want users to pick one (and only one) option among several
 https://codepen.io/krdyke/pen/JxoGOz
 
 ##### Checkbox `<input type="checkbox">`
+Checkboxes are useful for anything that can be answered true/false, or exists in an on/off state. They're similar to radio buttons, but they don't have a relationship to one another, so the `name` attribute should be different for each.
+
+```html
+ <input type="checkbox" id="color1"
+   name="checkbox1" value="red">
+ <label for="color1">Red</label>
+
+ <input type="checkbox" id="color2"
+   name="checkbox2" value="blue">
+ <label for="color2">Blue</label>
+
+ <input type="checkbox" id="color3"
+   name="checkbox3" value="green">
+ <label for="color3">Green</label>
+```
+
+https://codepen.io/krdyke/pen/qgdENM
+
 ##### Text `<input type="text">`
 
+```html
+<label for="name">Name:</label>
 
+<input type="text" id="name" name="name" required size="15">
+```
 
+```html
+<label for="name">Describe your ideal meal:</label>
+
+<textarea id="meal" name="meal" rows="3" cols="20"></textarea>
+```
+
+https://codepen.io/krdyke/pen/aXOvNm
+
+##### Label `<label for="id of the input to label">`
+
+Labels are great and make your site more usable bacause the label adds additional clickable space for your input.
+
+See this comparison.
+
+https://codepen.io/krdyke/pen/daoYem
 
 ### CSS
 Cascading Style Sheets (CSS) allow you to apply a set of *rules* to your content, which will be used to determine its appearance. 
@@ -268,7 +318,7 @@ h1, h2, h3 {
 }
 ```
 
-See how it works at the CodePen below.
+See how it works below.
 
 https://codepen.io/krdyke/pen/QzogVR
 
@@ -276,9 +326,30 @@ While using just element names to set style rules is useful, you quickly encount
 
 #### Classes
 
-Classes are a marvelous way to group CSS declarations.
+Classes are a marvelous way to group CSS declarations. They can save you a lot of text and also make updating your site much faster. Classes are set on html elements using the `class` attribute. They are referenced in CSS by a `.` in front of the name.
+
+For example:
+
+```html
+<h1> I want to make the word <span class="text-red">red</span> appear <span class="text-red">red</span>. </h1>  
+```
+
+The two `span` elements both have a class attribute set to `text-red`. The accompanying CSS would look like this:
+
+```css
+.text-red {
+	color: red;
+}
+```
+
+Let's see it in action.
+
+https://codepen.io/krdyke/pen/ErjPVo
 
 #### IDs
+In the input examples, you may have noticed some JavaScript containing phrases like `$("#name")`. The `#` is how you refer to an element by ID. Unlike classes, IDs should be unique to your webpage. Thus, you don't want to rely on them for CSS. They work best in combination with classes. Duplicate IDs won't necessarily break your page, but will result in unpredictable behavior.
+
+https://codepen.io/krdyke/pen/wNaMWa
 
 #### Nested Selectors
 
@@ -390,7 +461,7 @@ JQuery is used a lot to handle *events*. JavaScript is called an *event driven l
 
 ```javascript
 $("#some-id").click(function(event){ // this function is called a handler
-  #do something with the click
+  //do something with the click
   alert("Someone clicked! Red alert!");
   $("body").css("background-color", "red");
 })

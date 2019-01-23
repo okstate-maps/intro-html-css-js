@@ -387,6 +387,28 @@ https://codepen.io/krdyke/pen/GzJZxE
 
 Having a sense of how selectors work and how specificity comes into play will save you *many* headaches down the line.
 
+#### Advanced Layout using CSS Grid
+Using CSS create webpage layouts can be a real pain. Luckily for us, a new feature called the CSS Grid makes layout much less painful. In particular, I like using what's called the template areas approach. If you have HTML such as this.
+
+```html
+<header> Name of your site.</header>
+<nav> Navigation area </nav>
+<sidebar>Ancillary content</sidebar>
+<main>The main event</main>
+<footer>Bottom of content</footer>
+```
+
+You can use CSS Grid to create an interesting layout like this:
+
+![Layout](/img/grid_layout.jpg?raw=true "An Interesting Layout")
+
+Look at this link to see how. Note that this may be confusing at first, but don't despair.
+
+https://codepen.io/krdyke/pen/zeGBmw
+
+For more about laying out a page using CSS see this page.
+
+https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction
 
 ### JavaScript and JQuery
 

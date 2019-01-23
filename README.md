@@ -418,30 +418,36 @@ https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction
 - you can change the value of a variable anytime, to anything. This isn't legal in some other languages (like Java), but for the most part, it's a big time saver for our purposes.
 
 #### functions
-- create them like this `function foobar(){alert("hi")};`
-- or like this `var foobar = function(){alert("hi")};`
+- create them like this `function sayHello(){alert("hi")};`
+- or like this `var foobar = function(){alert("hi")};
+- execute a function like this `sayHello()`
 - [**scope**](http://www.smashingmagazine.com/2009/08/what-you-need-to-know-about-javascript-scope/) is an important concept!
   - most importantly, any variable defined within a function is only "visible" within that function. If you try to access it elsewhere, you'll get an error. This means you really need to be careful about how you assign `var` statements. If you refer to a variable without one, it's implied you wanted to create a *global variable*, which is a variable accessible from anywhere. For example:
 
 ```javascript
 var fruit = "persimmon";
 
-function imaFunction(){
+var func1 = function (){
     var fruit = "ugli fruit";
 };
 
-function imanotherFunction(){
+var func2 = function (){
     fruit = "kumquat";
 };
 console.log("1: " + fruit);
-imaFunction();
-console.log("2: " + fruit);
-imanotherFunction();
-console.log("3: " + fruit);
-//what is going on here?
 
+func1();
+
+console.log("2: " + fruit);
+
+func2();
+
+console.log("3: " + fruit);
+
+//what is going on here??
 ```
-(http://jsfiddle.net/rprmcdo9/5/)
+
+https://codepen.io/krdyke/pen/qgdrpQ?editors=0011
 
 
 #### [JQuery](http://jquery.com)
@@ -493,6 +499,8 @@ $("#some-id").click(function(event){ // this function is called a handler
   $("body").css("background-color", "red");
 })
 ```
+
+https://codepen.io/krdyke/pen/jdPBXL
 
 ##### AJAX
 For our purposes, a really important aspect of JQuery is the ability to make AJAX requests. AJAX originally meant Asynchronous JavaScript and XML, but it now more generally refers to asynchronous JavaScript stuff. Web maps are all examples of asynchronous JavaScript in action.

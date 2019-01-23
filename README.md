@@ -280,11 +280,11 @@ See this comparison.
 https://codepen.io/krdyke/pen/daoYem
 
 ### CSS
-Cascading Style Sheets (CSS) allow you to apply a set of *rules* to your content, which will be used to determine its appearance. 
+Cascading Style Sheets (CSS) allow you to apply a set of *declarations* to your content, which will be used to determine its appearance. 
 
-CSS is applied according to *rules* you specify. An example of a CSS rule is `color: red`, which means that text should be displayed with the color red. The elements these rules get applied to is decided using *selectors*. 
+CSS is applied according to *declarations* you specify. An example of a CSS declaration is `color: red`, which references the *property* called `color` and sets it to red. The elements these declarations get applied to is decided using *selectors*. 
 
-The following link is a reference to *every available CSS rule*. Chances are you'll never use many of these, but whenever you need to check or recheck something, this is a great starting point.
+The following link is a reference to *every available CSS property*. Chances are you'll never use many of these, but whenever you need to check or recheck something, this is a great starting point.
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
 
@@ -352,15 +352,18 @@ In the input examples, you may have noticed some JavaScript containing phrases l
 https://codepen.io/krdyke/pen/wNaMWa
 
 #### Nested Selectors
+You can use spaces to combine multiple selectors to make a single, more *specific* selector.
+
+https://codepen.io/krdyke/pen/JxdXyj
 
 #### Specificity
-Most newcomers to CSS get caught up by styles not being applied when you think they should be. To avoid this problem, it's very helpful to get proficient with *selector specificity*, which is the mechanism by which your browser decides which CSS rule to actually use when styling a page. This article from [CSS Tricks](https://css-tricks.com/specifics-on-css-specificity/) can be helpful. Here's an example of what I mean by specificity. Say you have a header element like this:
+You can combine some selectors, such as element and class, as well. Most newcomers to CSS get caught up by styles not being applied when you think they should be. To avoid this problem, it's very helpful to get proficient with *selector specificity*, which is the mechanism by which your browser decides which CSS declaration to actually use when styling a page. This article from [CSS Tricks](https://css-tricks.com/specifics-on-css-specificity/) can be helpful. Here's an example of what I mean by specificity. Say you have a header element like this:
 
 ```html
 <h1 id="greeting" class="cowboy-greeting">Howdy</h1>
 ```
 
-Accompanying the `html`, you have the following `css` **rules** (think of each pair of { } and the stuff inside it as rules governing the selection that precedes it):
+Accompanying the `html`, you have the following `css` *declarations*:
 
 ```css
 h1.cowboy-greeting {
@@ -378,7 +381,9 @@ h1.cowboy-greeting {
 
 What color do you think the word "Howdy" will look like?
 
-Take a look [here](http://jsbin.com/yiyukequka/edit?html,css,output).
+Take a look.
+
+https://codepen.io/krdyke/pen/GzJZxE
 
 Having a sense of how selectors work and how specificity comes into play will save you *many* headaches down the line.
 

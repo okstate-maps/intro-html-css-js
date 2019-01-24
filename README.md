@@ -547,8 +547,6 @@ JSON allows you to *nest* data, making it far more flexible than a row based spr
 }
 ```
 
-Read more about GeoJSON [here](http://geojson.org/) and [here](http://www.macwright.org/2015/03/23/geojson-second-bite.html). You can make some GeoJSON [here](http://geojson.io/).  It's worth reading a bit about what GeoJSON is and playing around with drawing some. 
-
 If you ever interact with an API (which stands for Application Programming Interface), it will 99% of the time be in the form of JSON. 
 
 Some popular APIs include those provided by Twitter and GitHub.
@@ -556,59 +554,48 @@ Some popular APIs include those provided by Twitter and GitHub.
 Let's take a quick look at some JSON via the GitHub API.
 https://codepen.io/krdyke/pen/xMGjgj?editors=0011
 
-##### Back to JQuery
+##### Making a map
 
-JQuery allows you to request and use data from a remote server in your map. For example, there's some GeoJSON living at this URL.
+Let's go to https://codepen.io/krdyke/pen/yZYJEL and make a map.
 
-```
-https://gist.githubusercontent.com/anonymous/3321fa92df1395fc0167c82eecfa4763/raw/c96e8c0721c55e0889c32d6bfe246a08eca2840a/map.geojson
-```
-
-Let's go to http://umn-gis-5574.github.io/week2/2.html and play around.
+#### Using GitHub Pages to host your site for free
+1. Login to GitHub
+2. Create a new repository, called `intro-webdev`. Click yes to create README
+3. Click Settings, scroll down to GitHub Pages, change Source to master branch. Click Save.
+4. In new repository, click Create New File.
+5. Call it index.html and follow the steps below to make it come to life!
 
 #### Let's bring it all together
-Using what we learned today, let's a webpage with the following elements.
+Using what we learned today, let's build a webpage with the following elements.
 
-1. An html page titled `index.html` including:
+1. HTML content including:
   - DOCTYPE
-  - head tag
-    + meta tag for charset
-    + meta tag for viewport
-    + Link tag pointing to leaflet.css
-      + `<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />`   
-    + Link tag for `style.css`, a file you create where you'll write your CSS code (save the file in the same folder as `assignment.html`)
-      + `<link rel="stylesheet" href="style.css" />`  
-  - body tag
-    + div tag with `id` set to `map-container`
-    + div tag with `class` set to `red box`
+  - head element
+    + meta element for charset
+    + meta element for viewport
+    + Link element pointing to leaflet.css
+      + `<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">`   
+  - body element
+    + div element with `id` set to `map-container`
+    + div element with `class` set to `red box`
     + Script tags linking to leaflet and jquery.  
       ```
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
        ```
      
-    + Script tag pointing to `script.js`, a file you create where you'll write your JS (save the file in the same folder as `assignment.html`)
-      ```
-      <script src="script.js"></script>
-      ```
+2. CSS declarations
+  - a declaration for the id `map-container` that sets the `height` to `400px;` and the `width` to `500px;`
+  - a declaration for the class `box` setting `height` to `200px;` and `width` to `200px;`
+  - a declaration for the class `red` setting `background-color` to `tomato;` and `border` to `3px double red;` 
 
-2. A CSS file called `style.css`
-  - a rule for the id `map-container` that sets the `height` to `400px;` and the `width` to `500px;`
-  - a rule for the class `box` setting `height` to `200px;` and `width` to `200px;`
-  - a rule for the class `red` setting `background-color` to `tomato;` and `border` to `3px double red;` 
-
-3. A JavaScript file called `script.js`
+3. JavaScript
   - create a Leaflet map (`L.map`) 
-  - set the initial view to 44.971724, -93.243239 and zoom level 16 (`L.setView`)
-  - add a basemap using the url `http://{s}.tile.osm.org/{z}/{x}/{y}.png` (`L.tileLayer`)
-  - request GeoJSON from the url `https://dl.dropboxusercontent.com/u/8550761/wilson-library.geojson` using JQuery's [$.getJSON](http://api.jquery.com/jquery.getjson/) function
-  - add a GeoJSON based layer to the map using the requested GeoJSON  
-```javascript
-$.getJSON(<url for geojson>, function(data){
-    var geojson = new L.geoJson(data) //don't forget the word new in front of L.geoJson!
-        .addTo(map);
-});
-```
+  - set the initial view to 36.12250, -97.06997 and zoom level 14 (`L.setView`)
+  - add a basemap using the url `https://api.mapbox.com/styles/v1/krdyke/cj8uh9ex2e8x72ss197dx81n0/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoia3JkeWtlIiwiYSI6Ik15RGcwZGMifQ.IR_NpAqXL1ro8mFeTIdif` (`L.tileLayer`)
+  - add a marker at Edmon Low Library
+  	- `L.marker([36.123080, -97.069668]).addTo(map)`
+  	
   - Use JQuery to select the div with `class` set to `red box`
     + Use the selector `.red.box` 
     + Add a click handler (`$(<your selector>).click(function(e){<doing something>})`) that does something in response to a user clicking on the div
@@ -624,6 +611,7 @@ $.getJSON(<url for geojson>, function(data){
 
 #### Some guidelines
 You're going to need to read documentation ([Leaflet's](http://leafletjs.com/reference.html) especially), review what we've done, look at some source code, and ask each other some questions. You can use the "Issues" feature of GitHub to ask questions for the group. I'll answer them, but would really like all of you to feel comfortable contributing as well! Remember the console (ctrl-shift-I or cmd-shift-I (Mac)) is your friend!
+
 
 #### Optional materials for learning more HTML, CSS, JS, and JQuery
 This Khan Academy course is excellent. If you have any doubts about your profiency with this stuff, please complete this course for next week.  

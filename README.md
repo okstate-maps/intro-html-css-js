@@ -623,5 +623,18 @@ https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web
 And a JQuery tutorial. It can do a lot of stuff.  
 https://learn.jquery.com/about-jquery/how-jquery-works/
 
+HTML Reference
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+
+CSS Reference
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+
+JS Reference
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+
+#### Cheat Sheets!
+https://htmlcheatsheet.com/
+https://www.smashingmagazine.com/2009/07/css-3-cheat-sheet-pdf/
+https://websitesetup.org/javascript-cheat-sheet/
 
 

@@ -505,6 +505,8 @@ https://codepen.io/krdyke/pen/jdPBXL
 ##### AJAX
 For our purposes, a really important aspect of JQuery is the ability to make AJAX requests. AJAX originally meant Asynchronous JavaScript and XML, but it now more generally refers to asynchronous JavaScript stuff. Web maps are all examples of asynchronous JavaScript in action.
 
+AJAX is what you use to fetch data.
+
 ##### An interlude to talk about JSON and GeoJSON
 JSON (and its derivative geofocused cousin GeoJSON) are **data exchange formats** that emphasize human readability and conciseness. JSON is **the** standard on the web for moving data around (having replaced XML), and GeoJSON is quickly getting to that point for spatial data.
 
@@ -547,6 +549,13 @@ JSON allows you to *nest* data, making it far more flexible than a row based spr
 
 Read more about GeoJSON [here](http://geojson.org/) and [here](http://www.macwright.org/2015/03/23/geojson-second-bite.html). You can make some GeoJSON [here](http://geojson.io/).  It's worth reading a bit about what GeoJSON is and playing around with drawing some. 
 
+If you ever interact with an API (which stands for Application Programming Interface), it will 99% of the time be in the form of JSON. 
+
+Some popular APIs include those provided by Twitter and GitHub.
+
+Let's take a quick look at some JSON via the GitHub API.
+https://codepen.io/krdyke/pen/xMGjgj?editors=0011
+
 ##### Back to JQuery
 
 JQuery allows you to request and use data from a remote server in your map. For example, there's some GeoJSON living at this URL.
@@ -557,28 +566,16 @@ https://gist.githubusercontent.com/anonymous/3321fa92df1395fc0167c82eecfa4763/ra
 
 Let's go to http://umn-gis-5574.github.io/week2/2.html and play around.
 
-### Your assignment
+#### Let's bring it all together
+Using what we learned today, let's a webpage with the following elements.
 
-#### Optional materials for learning more HTML, CSS, JS, and JQuery
-This Khan Academy course is excellent. If you have any doubts about your profiency with this stuff, please complete this course for next week.  
-https://www.khanacademy.org/computing/computer-programming/html-css
-
-Same goes for the tutorials from the Mozilla Developer Network.  
-https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web
-
-And a JQuery tutorial. It can do a lot of stuff.  
-https://learn.jquery.com/about-jquery/how-jquery-works/
-
-#### A more complicated webpage
-Using what we learned today, create a webpage with the following elements.
-
-1. An html page titled `assignment.html` including:
+1. An html page titled `index.html` including:
   - DOCTYPE
   - head tag
     + meta tag for charset
     + meta tag for viewport
     + Link tag pointing to leaflet.css
-      + `<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />`   
+      + `<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />`   
     + Link tag for `style.css`, a file you create where you'll write your CSS code (save the file in the same folder as `assignment.html`)
       + `<link rel="stylesheet" href="style.css" />`  
   - body tag
@@ -586,8 +583,8 @@ Using what we learned today, create a webpage with the following elements.
     + div tag with `class` set to `red box`
     + Script tags linking to leaflet and jquery.  
       ```
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	  <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
        ```
      
     + Script tag pointing to `script.js`, a file you create where you'll write your JS (save the file in the same folder as `assignment.html`)
@@ -627,5 +624,16 @@ $.getJSON(<url for geojson>, function(data){
 
 #### Some guidelines
 You're going to need to read documentation ([Leaflet's](http://leafletjs.com/reference.html) especially), review what we've done, look at some source code, and ask each other some questions. You can use the "Issues" feature of GitHub to ask questions for the group. I'll answer them, but would really like all of you to feel comfortable contributing as well! Remember the console (ctrl-shift-I or cmd-shift-I (Mac)) is your friend!
+
+#### Optional materials for learning more HTML, CSS, JS, and JQuery
+This Khan Academy course is excellent. If you have any doubts about your profiency with this stuff, please complete this course for next week.  
+https://www.khanacademy.org/computing/computer-programming/html-css
+
+Same goes for the tutorials from the Mozilla Developer Network.  
+https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web
+
+And a JQuery tutorial. It can do a lot of stuff.  
+https://learn.jquery.com/about-jquery/how-jquery-works/
+
 
 

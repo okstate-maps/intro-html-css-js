@@ -1,8 +1,8 @@
 ### Overview of the workshop
 1. A whirlwind overview of JavaScript, HTML, and CSS.  
 2. Putting all three to work by making a webpage containing text, an image, and an interactive web map.
-3. JQuery and what it is in relation to JavaScript
-4. Where to go next?
+3. Publishing your webpage on GitHub Pages.
+4. Resources for further learning.
 
 ### What is HTML?
 
@@ -18,7 +18,14 @@ HTML stands for HyperText Markup Language. At its heart, HTML is used to give *s
   
 Any self-respecting `.html` file must begin with a declaration to the world what sort of document it is. While there exists a [wide variety](https://en.wikipedia.org/wiki/Document_type_declaration) of doctypes, the **only one** you need to concern yourself with is just plain old `html`. With the advent of HTML5 (the 5th version of the specification for the markup language HTML), it's not really worth too much of your time thinking about the DOCTYPE. It's one of those things that's useless, but still required.
 
-2. Following the DOCTYPE, you will see the first *element* of your webpage, called `html` which contains everything other than the DOCTYPE declaration. Elements *that will contain other elements* consist of opening and closing *tags*. The opening tag consists of the element's name wrapped in `<` and `>`, while the closing tag wraps the element name in `</` and `>`.  So, at this point your `.html` file would look like this:
+2. Following the DOCTYPE, you will see the first *element* of your webpage, called `html` which contains everything other than the DOCTYPE declaration. 
+
+Here's a graphical breakdown of what makes an HTML element.
+
+![html tag](https://mdn.mozillademos.org/files/9347/grumpy-cat-small.png)
+Source: https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics#Anatomy_of_an_HTML_element
+
+Elements *that will contain other elements* consist of opening and closing *tags*. The opening tag consists of the element's name wrapped in `<` and `>`, while the closing tag wraps the element name in `</` and `>`.  So, at this point your `.html` file would look like this:
 
 ```html
 <!DOCTYPE html>

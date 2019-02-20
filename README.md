@@ -617,7 +617,7 @@ Using what we learned today, let's build a webpage with the following elements.
     + style each feature to be red circle instead of the default blue marker
 
 #### Some guidelines
-You're going to need to read documentation ([Leaflet's](http://leafletjs.com/reference.html) especially), review what we've done, look at some source code, and ask each other some questions. You can use the "Issues" feature of GitHub to ask questions for the group. I'll answer them, but would really like all of you to feel comfortable contributing as well! The console (F12 or ctrl-shift-I (Windows) or cmd-shift-I (Mac)) is your friend!
+You're going to need to read documentation ([Leaflet's](http://leafletjs.com/reference.html) especially), review what we've done, look at some source code, and ask each other some questions. The console (F12 or ctrl-shift-I (Windows) or cmd-shift-I (Mac)) is your friend!
 
 
 #### Optional materials for learning more HTML, CSS, JS, and JQuery

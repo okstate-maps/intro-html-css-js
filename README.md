@@ -22,7 +22,7 @@ Any self-respecting `.html` file must begin with a declaration to the world what
 
 Here's a graphical breakdown of what makes an HTML element.
 
-![html tag](https://mdn.mozillademos.org/files/9347/grumpy-cat-small.png)
+![html tag](https://mdn.mozillademos.org/files/9347/grumpy-cat-small.png) 
 Source: https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics#Anatomy_of_an_HTML_element
 
 Elements *that will contain other elements* consist of opening and closing *tags*. The opening tag consists of the element's name wrapped in `<` and `>`, while the closing tag wraps the element name in `</` and `>`.  So, at this point your `.html` file would look like this:
@@ -33,6 +33,10 @@ Elements *that will contain other elements* consist of opening and closing *tags
 	
 </html>
 ```
+
+![html_tag_w_attrib](https://mdn.mozillademos.org/files/9345/grumpy-cat-attribute-small.png) 
+
+Attributes contain extra information about the element.
 
 3. Next, you will encounter the first *nested* element of your document, called the `head`. The `head` contains metadata about your web page. Some of these elements, such as `meta`, do not contain text or other elements, and as such do not use closing tags. The `head` can contain the following (not an exhaustive list):
   + `<title>`, which is what you see in the browser tab and search results. This is a very important element of a professional looking site and easily overlooked. 
